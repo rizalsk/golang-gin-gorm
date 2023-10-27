@@ -14,3 +14,7 @@ func MakePassword(password string) (string, error) {
 func ComparePassword(password string, hashedPassword string) bool {
 	return bcrypt.CompareHashAndPassword([]byte(hashedPassword), []byte(password)) == nil
 }
+
+func GenerateToken() {
+
+}

@@ -27,8 +27,7 @@ func CreateProduct(ctx *gin.Context) {
 	var product models.Product
 	// validation
 	if err := ctx.ShouldBind(&product); err != nil {
-
-		validation := utils.GetValidation(err)
+		validation := utils.ParseError(err)
 		ctx.JSON(http.StatusBadRequest, gin.H{
 			"error": validation,
 		})
